@@ -12,6 +12,10 @@ try {
     if ($new<0) { $pdo->rollBack(); respond(['ok'=>false,'error'=>'insufficient_points'],409); }
     $pdo->prepare('UPDATE point_wallets SET balance=? WHERE user_id=?')->execute([$new,$userId]);
     $pdo->prepare("INSERT INTO point_ledger(user_id,amount,entry_type,description,reference_id) VALUES(?,?,'admin_adjustment',?,?)")->execute([$userId,$amount,$reason,'admin-'.$admin['id']]);
+    $details = json_encode(['amount'=>$amount,'reason'=>$reason], JSON_UNESCAPED_SLASHES);
+    $ipHash = hash('sha256', (string)($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
+    $pdo->prepare('INSERT INTO admin_audit_logs(admin_user_id,action,target_type,target_id,details_json,ip_hash) VALUES(?,?,?,?,?,?)')
+        ->execute([(int)$admin['id'],'points.adjust','user',(string)$userId,$details,$ipHash]);
     $pdo->commit();
     respond(['ok'=>true,'user_id'=>$userId,'balance'=>$new]);
 } catch (Throwable $e) {
