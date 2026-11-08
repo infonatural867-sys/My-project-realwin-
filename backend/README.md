@@ -1,11 +1,11 @@
 # REALWIN PHP/MySQL API
 
-Designed for PHP 8+ shared hosting with MySQL/MariaDB (including cPanel-style hosting).
+Designed for PHP 8.1+ shared hosting with MySQL/MariaDB (including cPanel-style hosting).
 
 ## Install
 
 1. Create a new MySQL database and database user in your hosting panel.
-2. Open phpMyAdmin and import the complete schema.sql file once into the empty database. If you already imported the earlier starter schema, do not blindly import it again; create only the new tables (api_sessions and auth_rate_limits) manually from the updated schema section or use a fresh database.
+2. Open phpMyAdmin and import the complete schema.sql file once into the empty database. If you already imported the earlier starter schema, do not import the full schema again; run migrations/001_auth_tables.sql in phpMyAdmin to add only the new authentication tables.
 3. Copy config.example.php to config.php in this folder on the server. Fill in database details. Keep config.php private; it is excluded by .htaccess and .gitignore.
 4. Upload the api/ folder and .htaccess to your hosting directory. Ensure HTTPS is enabled.
 5. Visit /api/health.php to test database connectivity.
