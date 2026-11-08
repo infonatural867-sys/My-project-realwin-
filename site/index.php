@@ -4,7 +4,7 @@ declare(strict_types=1);
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101827"><meta name="description" content="REALWIN — play, learn and compete for fun.">
-<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">
 <title>REALWIN — Play for fun</title>
 </head><body>
 <header class="topbar"><a class="brand" href="./"><span class="brand-mark">R</span><span>REAL<span class="accent">WIN</span><small>PLAY FOR FUN</small></span></a>
@@ -25,5 +25,5 @@ declare(strict_types=1);
 </main>
 <footer class="footer wrap"><a class="brand" href="#"><span class="brand-mark">R</span><span>REAL<span class="accent">WIN</span><small>PLAY FOR FUN</small></span></a><div class="footer-links"><a href="#safety" data-i18n="safety">Safety</a><a href="privacy.html" data-i18n="privacy">Privacy</a><a href="terms.html" data-i18n="terms">Terms</a><a href="mailto:support@realwin.gamer.free" data-i18n="contact">Contact</a></div><small>© <span id="year"></span> REALWIN. <span data-i18n="rights">All rights reserved.</span></small></footer>
 <div class="modal" id="authModal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="brand modal-brand"><span class="brand-mark">R</span><span>REAL<span class="accent">WIN</span></span></div><h2 id="authTitle">Welcome back</h2><p id="authSubtitle">Sign in to your account.</p><form id="authForm"><label id="usernameWrap" class="field hidden">Username<input id="username" name="username" minlength="3" maxlength="32" autocomplete="username"></label><label class="field">Email<input id="email" name="email" type="email" required autocomplete="email"></label><label class="field">Password<input id="password" name="password" type="password" required minlength="10" autocomplete="current-password"></label><button class="btn btn-primary btn-full" id="authSubmit" type="submit">Log in</button><p class="form-message" id="formMessage" role="status"></p></form><button class="switch-auth" id="switchAuth">New here? Create an account</button><small class="legal-small">By continuing, you agree to the REALWIN Terms and Privacy Policy.</small></div></div>
-<div class="toast" id="toast" role="status"></div><script src="assets/app.js" defer></script><script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<div class="toast" id="toast" role="status"></div><script src="assets/app.js" defer></script><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});</script><script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body></html>
