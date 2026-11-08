@@ -7,7 +7,7 @@ A clean-room Android app and PHP/MySQL backend starter for a non-cash, non-redee
 - No deposits, withdrawals, cash-out, wagering, or real-money gaming are implemented.
 - Do not add payment flows or redeemable balances without qualified legal review and compliant provider approval.
 
-## Structure
+## Website deployment\n- `site/` — bilingual dark-theme website, player dashboard, admin console, PWA manifest and service worker. See `site/README-INSTALL-BN.md` for InfinityFree upload instructions.\n\n## Structure
 - `android/` — native Android app (Java + Android Gradle Plugin)
 - `backend/` — PHP API starter and MySQL schema for shared hosting
 - `.github/workflows/` — automated debug APK build
