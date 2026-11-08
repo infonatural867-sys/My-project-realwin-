@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "my-project-realwin",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2026-11-08",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": true
+    }
+  }
+}
