@@ -1,0 +1,10 @@
+# Android / Gradle
+.gradle/
+**/build/
+local.properties
+*.jks
+*.keystore
+
+# Server-only secrets
+backend/config.php
+.env
