@@ -5,7 +5,7 @@ Designed for PHP 8.1+ shared hosting with MySQL/MariaDB (including cPanel-style 
 ## Install
 
 1. Create a new MySQL database and database user in your hosting panel.
-2. Open phpMyAdmin and import the complete schema.sql file once into the empty database. If you already imported the earlier starter schema, do not import the full schema again; run migrations/001_auth_tables.sql in phpMyAdmin to add only the new authentication tables.
+2. Open phpMyAdmin and import schema.sql once into an empty database. If the starter schema is already installed, do not import it again. Run migrations/001_auth_tables.sql only if authentication tables are missing, then run migrations/002_platform_modules.sql once to add game, tournament, support, consent and audit tables.
 3. Copy config.example.php to config.php in this folder on the server. Fill in database details. Keep config.php private; it is excluded by .htaccess and .gitignore.
 4. Upload the api/ folder and .htaccess to your hosting directory. Ensure HTTPS is enabled.
 5. Visit /api/health.php to test database connectivity.
